@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>
+            Micradata Generator
+        </title>
+    </head>
+
+    <body>
+        
+        <h1>Microdata Generator</h1>
+
+        <div class="textForm">
+            <form method="POST" action="/">
+
+                <fieldset>
+                    <div>
+                        <p style="font-size: medium; margin: 0;">{{ form.text.label }}</p> <br>
+                        {{ form.text(cols=50, rows=5) }}
+                    </div>
+                    <div style="margin: 10px;">
+                        {{ form.submit(class = "btn") }}
+                    </div>
+                    <div>
+                        {{ text }}
+                    </div>
+                </fieldset>
+
+
+
+            </form>
+        </div>
+
+        <div style="margin: 10px;">
+            <a href="/downloadtext"><button class='btn btn-default'>Stiahnuť Text</button></a>
+        </div>
+
+        <h4>Alebo nahrajte html súbor</h4>
+
+        <div>
+            <form action = "/upload" method = "post" enctype="multipart/form-data">  
+                <input type="file" name="file" />  
+                <input type = "submit" value="Nahrať">
+
+                <p>
+                    Vyberte tagy ktoré chcete označiť
+                </p>
+                <div style="display: inline-block;">
+                    <input type="checkbox" id="h1" name="checkbox" value="h1" style="display: inline-block;">
+                    <label for="h1"> h1</label>
+                    <input type="checkbox" id="h2" name="checkbox" value="h2" style="display: inline-block;">
+                    <label for="h2"> h2</label>
+                    <input type="checkbox" id="p" name="checkbox" value="p" style="display: inline-block;">
+                    <label for="p"> p</label>
+                </div>
+                
+            </form> 
+        </div>
+
+    </body>
+
+</html>
+
+
+
